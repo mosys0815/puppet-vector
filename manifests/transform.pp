@@ -11,8 +11,11 @@
 #   Hash of additional parameters for this source (besides type and inputs)
 # @param format
 #   File format to save as, default toml
+# @param condition
+#   Condition to apply to the transform
 define vector::transform (
   String                    $type,
+  String                    $condition,
   Array[String]             $inputs,
   Hash                      $parameters,
   Vector::ValidConfigFormat $format = 'toml',
@@ -23,7 +26,7 @@ define vector::transform (
   #   },
   # }
 
-  $transform_hash = $parameters + { 'type' => $type, 'inputs' => $inputs }
+  $transform_hash = $parameters + { 'type' => $type, 'inputs' => $inputs, 'condition' => $condition }
 
   $transform_file_name = "${vector::setup::transforms_dir}/${title}.${format}"
 
