@@ -17,7 +17,7 @@ define vector::transform (
   String                    $type,
   Array[String]             $inputs,
   Hash                      $parameters,
-  String                    $condition = undef,
+  Optional[String]          $condition = undef,
   Vector::ValidConfigFormat $format = 'toml',
 ) {
   # $transform_hash = {
