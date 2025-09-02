@@ -14,10 +14,10 @@
 # @param condition
 #   Condition to apply to the transform
 define vector::transform (
-  String                    $condition,
   String                    $type,
   Array[String]             $inputs,
   Hash                      $parameters,
+  String                    $condition = undef,
   Vector::ValidConfigFormat $format = 'toml',
 ) {
   # $transform_hash = {
