@@ -14,11 +14,11 @@
 # @param condition
 #   Condition to apply to the transform
 define vector::transform (
-  String                                              $type,
-  Array[String]                                       $inputs,
-  Optional[Hash]                                      $parameters = undef,
-  Optional[Regexp[/{ type = "\w+", source = ".*" }/]] $condition = undef,
-  Vector::ValidConfigFormat                           $format = 'toml',
+  String                                               $type,
+  Array[String]                                        $inputs,
+  Vector::ValidConfigFormat                            $format = 'toml',
+  Optional[Hash]                                       $parameters = undef,
+  Optional[Pattern[/{ type = "\w+", source = ".*" }/]] $condition = undef,
 ) {
   # $transform_hash = {
   #   'transforms' => {
